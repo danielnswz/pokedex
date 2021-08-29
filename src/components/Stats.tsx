@@ -14,7 +14,7 @@ const Stats = ({ stats }: Props): ReactElement => {
       {stats &&
         stats.map((stat) => {
           return (
-            <div className='stats-container__stat'>
+            <div className='stats-container__stat' key={stat.stat.name}>
               <CircularProgressbar
                 value={stat.base_stat}
                 text={`${stat.base_stat}%`}

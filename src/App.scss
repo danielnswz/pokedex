@@ -1,0 +1,224 @@
+/* General */
+/*-------------------------*/
+
+:root {
+  --red: #dd082f;
+  --dark-red: #3b020d;
+  --green: #2ff901;
+  --yellow: #ffcc02;
+  --sky: #01fbfb;
+  --orange: #ffcc02;
+  --blue: #519afb;
+  --small: 600px;
+  font-size: 16px;
+}
+
+body{
+  margin: 0;
+  background-color: var(--dark-red);
+}
+
+h1, h2{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  // height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: system-ui;
+}
+
+
+/*------------------*/
+/* Pokedex */
+/*------------------*/
+.pokedex {
+  perspective: 1000px;
+  position: relative;
+  height: 41rem;
+  width: 100%;
+  margin: 2rem 1rem auto;
+  display: flex;
+  flex-direction: row;
+
+  &__left {
+    background: var(--red);
+    height: inherit;
+    width: 40%;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid black;
+    border-right: 10px solid black;
+    box-sizing: border-box;
+    padding: 1rem 4rem;
+    order: 1;
+
+    &__top {
+      display: flex;
+      align-items: flex-start;
+
+      & > * {
+        margin-right: .7em;
+      }
+    }
+
+    &__bottom {
+      margin-top: 1em;
+
+      &__lights {
+        display: flex;
+        align-items: flex-start;
+
+        & > * {
+          margin-right: .8em;
+        }
+      }
+    }
+
+  }
+
+  &__right {
+    background: var(--red);
+    height: calc(100% - 6rem);
+    width: 40%;
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    margin-top: 6rem;
+    padding: 4rem;
+    box-sizing: border-box;
+    display: flex;
+    order: 2;
+
+    &::before {
+      width: calc(100% - 9rem);
+      height: 5rem;
+      position: absolute;
+      bottom: 100%;
+      background-color: var(--red);
+      left: 0;
+      border-top: 1px solid black;
+      content: '';
+    }
+
+    &::after {
+      content: '';
+      border-left: 2.5rem solid var(--red);
+      border-bottom: 2.5rem solid var(--red);
+      border-top: 2.5rem solid transparent;
+      border-right: 2.5rem solid transparent;
+      display: block;
+      width: 0;
+      position: absolute;
+      left: calc(100% - 9rem);
+      bottom: 100%;
+      filter: drop-shadow(0 -1px 0 black)
+    }
+  }
+
+  &__screen-container {
+    background: #b0b0b0;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid black;
+    margin: 20px 0;
+    min-height: 50%;
+    padding: 0.8rem 0.8rem 4rem 0.8rem;
+    width: 100%;
+  }
+
+  &__list-container {
+    background: #b0b0b0;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid black;
+    margin: 20px 0;
+    height: 50%;
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+
+  &__light {
+    border: 1px solid black;
+    box-shadow: -2px 2px 0 rgba(255,255,255, .5);
+    width: 1.3em;
+    height: 1.3em;
+    background: gray;
+    border-radius: 50%;
+  
+    &--big {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    &--medium {
+      width: 2rem;
+      height: 2rem;
+    }
+    &--large {
+      width: 80px;
+      border-radius: 20px;
+    }
+    &--red {
+      background-color: var(--red);
+    }
+    &--blue {
+      background-color: var(--blue);
+    }
+    &--green {
+      background-color: var(--green);
+    }
+    &--sky {
+      background-color: var(--sky);
+    }
+    &--orange {
+      background-color: var(--orange);
+    }
+    &--yellow {
+      background-color: var(--yellow);
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .pokedex {
+    height: 80rem;
+    display: flex;
+    flex-direction: column;
+
+    &__left {
+      width: 100%;
+      height: calc(100% - 6rem);
+      border-bottom: 10px solid black;
+      border-right: 1px solid black;
+    }
+
+    &__right {
+      width: 100%;
+      height: 40%;
+      margin-top: unset;
+      margin-bottom: 7rem;
+      &::before {
+        display: none;
+      }
+  
+      &::after {
+        display: none;
+        
+      }
+    }
+
+  }
+}
+
+

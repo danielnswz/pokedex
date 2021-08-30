@@ -1,0 +1,22 @@
+.pokedex-main-screen {
+    text-align: center;
+    height: 100%;
+
+    &__title {
+        min-height: 1rem;
+        text-transform: capitalize;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+    &__sprite-container {
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        margin: auto;
+
+        & img {
+            object-fit:contain;
+            width: 100%;
+        }
+    }
+}

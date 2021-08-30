@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
 
-export function index(): ReactElement {
+export function AditionalModule(): ReactElement {
   return <div />
 }

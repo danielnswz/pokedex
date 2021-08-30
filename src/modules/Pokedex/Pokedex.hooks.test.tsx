@@ -8,7 +8,7 @@ import {
 import { renderHook } from '@testing-library/react-hooks'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { axiosInstance, BASE_URL } from '../utils/request'
+import { axiosInstance, BASE_URL } from '../../utils/request'
 import { useInfinitePokemonQuery, usePokemonQuery } from './Pokedex.hooks'
 
 interface Props {

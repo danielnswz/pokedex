@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import PokedexScreen from './PokedexScreen'
-import PokemonList from './PokemonList'
-import { IPokemonList, IPokemonSample, IPokemonFull } from '../utils/types'
+import { PokedexScreen } from './PokedexScreen'
+import { PokemonList } from './PokemonList'
+import { IPokemonList, IPokemonSample, IPokemonFull } from './types'
 import { useInfinitePokemonQuery, usePokemonQuery } from './Pokedex.hooks'
 
-const Pokedex = (): React.ReactElement => {
+export const Pokedex = (): React.ReactElement => {
   const [pokemons, setPokemons] = useState<IPokemonSample[]>([])
   const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
 
@@ -65,5 +65,3 @@ const Pokedex = (): React.ReactElement => {
     </div>
   )
 }
-
-export default Pokedex

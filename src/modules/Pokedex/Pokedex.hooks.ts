@@ -6,8 +6,8 @@ import {
 } from 'react-query'
 import queryString from 'query-string'
 import loglevel from 'loglevel'
-import { IPokemonSample, IPokemonResponse } from '../utils/types'
-import { axiosInstance } from '../utils/request'
+import { IPokemonSample, IPokemonResponse } from './types'
+import { axiosInstance } from '../../utils/request'
 
 const getPokemon = async (id: string | null): Promise<void> => {
   try {

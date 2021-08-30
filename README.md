@@ -15,3 +15,5 @@ In the project directory, you can run:
 - Project uses react-query and axios
 - Components tested with jest and react-testing-library
 - Custom hooks poorly tested with testing-library and msw
+- Main styles based on [miguelseguramx](https://gist.github.com/miguelseguramx/307f645f1d18f73b6e2479cced6f388a)
+- Using sass and BEM methodology

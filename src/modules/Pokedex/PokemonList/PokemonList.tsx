@@ -1,7 +1,7 @@
 /* eslint-disable react/button-has-type */
 import React, { ReactElement } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { IPokemonSample } from '../utils/types'
+import { IPokemonSample } from '../types'
 import './PokemonList.scss'
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   error: Error | undefined
 }
 
-const PokemonList = ({
+export const PokemonList = ({
   pokemons,
   selectedPokemon,
   setSelectedPokemon,
@@ -52,5 +52,3 @@ const PokemonList = ({
     </div>
   )
 }
-
-export default PokemonList

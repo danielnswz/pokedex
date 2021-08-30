@@ -1,8 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, RenderResult } from '@testing-library/react'
-import PokedexScreen from './PokedexScreen'
-import { IPokemonFull } from '../utils/types'
+import { PokedexScreen } from './PokedexScreen'
+import { IPokemonFull } from '../types'
 
 describe('<PokedexScreen />', () => {
   let component: RenderResult

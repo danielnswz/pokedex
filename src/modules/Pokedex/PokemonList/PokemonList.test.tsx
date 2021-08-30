@@ -1,8 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, render, RenderResult } from '@testing-library/react'
-import PokemonList from './PokemonList'
-import { IPokemonSample } from '../utils/types'
+import { PokemonList } from './PokemonList'
+import { IPokemonSample } from '../types'
 
 describe('<PokemonList />', () => {
   let component: RenderResult

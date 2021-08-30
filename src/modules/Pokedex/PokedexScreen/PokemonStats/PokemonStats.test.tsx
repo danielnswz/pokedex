@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import { render, RenderResult, screen } from '@testing-library/react'
-import PokemonStats from './PokemonStats'
+import { render, RenderResult } from '@testing-library/react'
+import { PokemonStats } from './PokemonStats'
 
 describe('<PokemonStats />', () => {
   let component: RenderResult

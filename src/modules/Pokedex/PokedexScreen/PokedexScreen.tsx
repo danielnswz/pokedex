@@ -1,6 +1,6 @@
 import React from 'react'
-import { IPokemonFull } from '../utils/types'
-import PokemonStats from './PokemonStats'
+import { IPokemonFull } from '../types'
+import { PokemonStats } from './PokemonStats'
 import './PokedexScreen.scss'
 
 interface Props {
@@ -17,7 +17,10 @@ const dictionary = [
   'pidgeot',
 ]
 
-const PokedexScreen = ({ pokemon, error }: Props): React.ReactElement => (
+export const PokedexScreen = ({
+  pokemon,
+  error,
+}: Props): React.ReactElement => (
   <div className='pokedex-main-screen'>
     <h4>{error && error?.message}</h4>
     <h1 className='pokedex-main-screen__title'>
@@ -38,5 +41,3 @@ const PokedexScreen = ({ pokemon, error }: Props): React.ReactElement => (
     <PokemonStats pokeStats={pokemon?.stats} />
   </div>
 )
-
-export default PokedexScreen

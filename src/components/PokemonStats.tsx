@@ -2,17 +2,17 @@ import React, { ReactElement } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import { IStats } from '../utils/types'
 import 'react-circular-progressbar/dist/styles.css'
-import './Stats.scss'
+import './PokemonStats.scss'
 
 interface Props {
-  stats: IStats[]
+  pokeStats: IStats[]
 }
 
-const Stats = ({ stats }: Props): ReactElement => {
+const PokemonStats = ({ pokeStats }: Props): ReactElement => {
   return (
     <div className='stats-container'>
-      {stats &&
-        stats.map((stat) => {
+      {pokeStats &&
+        pokeStats.map((stat) => {
           return (
             <div className='stats-container__stat' key={stat.stat.name}>
               <CircularProgressbar
@@ -28,4 +28,4 @@ const Stats = ({ stats }: Props): ReactElement => {
   )
 }
 
-export default Stats
+export default PokemonStats

@@ -1,11 +1,11 @@
 import React from 'react'
 import { IPokemonFull } from '../utils/types'
-import Stats from './Stats'
+import PokemonStats from './PokemonStats'
 import './PokedexScreen.scss'
 
 interface Props {
-  pokemon: IPokemonFull
-  error: Error
+  pokemon: IPokemonFull | null
+  error: Error | undefined
 }
 
 const dictionary = [
@@ -35,7 +35,7 @@ const PokedexScreen = ({ pokemon, error }: Props): React.ReactElement => (
         <img src={pokemon?.sprites?.front_default} alt={pokemon.name} />
       )}
     </div>
-    <Stats stats={pokemon?.stats} />
+    <PokemonStats pokeStats={pokemon?.stats} />
   </div>
 )
 

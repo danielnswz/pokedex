@@ -7,11 +7,11 @@ import {
 import queryString from 'query-string'
 import loglevel from 'loglevel'
 import { IPokemonSample, IPokemonResponse } from '../utils/types'
-import axios from '../utils/request'
+import { axiosInstance } from '../utils/request'
 
 const getPokemon = async (id: string | null): Promise<void> => {
   try {
-    const { data } = await axios.get(`/pokemon/${id}/`)
+    const { data } = await axiosInstance.get(`/pokemon/${id}/`)
     return data
   } catch (error) {
     loglevel.error(`There was an error fetching the pokemon ${error}`)
@@ -21,7 +21,9 @@ const getPokemon = async (id: string | null): Promise<void> => {
 
 const getPokemons = async ({ pageParam = 0 }): Promise<IPokemonResponse> => {
   try {
-    const { data } = await axios.get(`/pokemon/?offset=${pageParam}&limit=10`)
+    const { data } = await axiosInstance.get(
+      `/pokemon/?offset=${pageParam}&limit=10`
+    )
     const results = data?.results.map((el: IPokemonSample) => {
       const urlSplit = el.url?.split('/')
       return {

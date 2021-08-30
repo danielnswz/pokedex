@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+export const BASE_URL = process.env.REACT_APP_BASE_URL
 
-export default axios.create({
+export const axiosInstance = axios.create({
   baseURL: BASE_URL,
   timeout: 30000,
   responseType: 'json',

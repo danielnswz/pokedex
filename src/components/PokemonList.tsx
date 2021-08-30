@@ -10,7 +10,7 @@ interface Props {
   setSelectedPokemon: (pokemonId: string | null) => void
   fetchNextPage: () => void
   hasNextPage: boolean | undefined
-  error: Error
+  error: Error | undefined
 }
 
 const PokemonList = ({
